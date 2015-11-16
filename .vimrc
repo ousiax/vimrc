@@ -45,6 +45,9 @@ filetype plugin indent on    " required
 
 
 
+" line enables syntax highlighting
+syntax on
+
 " Display line number
 set number
 
