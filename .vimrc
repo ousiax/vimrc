@@ -23,10 +23,12 @@ Plugin 'L9'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
 " HTML5 + inline SVG omnicomplete function, indent and syntax for Vim.
 Plugin 'othree/html5.vim'
+" GO(golang) support for Vim
+Plugin 'fatih/Vim-go'
+" Python-mode is a vim plugin that helps you to create python code.
+" Plugin 'klen/python-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,9 +47,6 @@ filetype plugin indent on    " required
 
 
 
-" line enables syntax highlighting
-syntax on
-
 " Display line number
 set number
 
@@ -65,3 +64,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese
 set ambiwidth=double
+
+" syntax
+syntax on
