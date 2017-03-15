@@ -13,6 +13,7 @@ set noswapfile
 " set expandtab
 " set tabstop=4
 " set shiftwidth=4
+" autocmd FileType make setlocal noexpandtab
 
 " UTF-8
 set encoding=utf-8
