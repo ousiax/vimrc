@@ -25,10 +25,17 @@ Plugin 'L9'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " HTML5 + inline SVG omnicomplete function, indent and syntax for Vim.
 Plugin 'othree/html5.vim'
+
 " GO(golang) support for Vim
 Plugin 'fatih/Vim-go'
+let g:go_template_autocreate = 0
+
 " Python-mode is a vim plugin that helps you to create python code.
-" Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
+
+" Provide easy code formatting in Vim by integrating existing code formatters. 
+Plugin 'Chiel92/vim-autoformat'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,3 +76,9 @@ set ambiwidth=double
 
 " syntax
 syntax on
+
+set showmatch
+
+" backspace
+
+set backspace=indent,eol,start
