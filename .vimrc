@@ -31,11 +31,12 @@ Plugin 'fatih/Vim-go'
 let g:go_template_autocreate = 0
 
 " Python-mode is a vim plugin that helps you to create python code.
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 
-" Provide easy code formatting in Vim by integrating existing code formatters. 
-Plugin 'Chiel92/vim-autoformat'
-
+" Format JavaScript files with js-beautify.
+Plugin 'maksimr/vim-jsbeautify'
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,11 +63,13 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Indenting source code
 set expandtab
 set tabstop=4
 set shiftwidth=4
 
 autocmd FileType make setlocal noexpandtab
+autocmd FileType js   set shiftwidth=2
 
 " UTF-8
 set encoding=utf-8
