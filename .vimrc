@@ -69,7 +69,7 @@ set tabstop=4
 set shiftwidth=4
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType js   set shiftwidth=2
+autocmd FileType xml,js,html,yaml,yml   set shiftwidth=2
 
 " UTF-8
 set encoding=utf-8
