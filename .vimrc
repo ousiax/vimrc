@@ -53,8 +53,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-
+" basic.vimrc
 " Display line number
 set number
 
@@ -68,8 +67,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+filetype plugin indent on
 autocmd FileType make setlocal noexpandtab
-autocmd FileType xml,js,html,yaml,yml   set shiftwidth=2
+autocmd FileType xml,js,html,yaml,yml,json,scss,css   set shiftwidth=2
 
 " UTF-8
 set encoding=utf-8
@@ -85,3 +85,9 @@ set showmatch
 " backspace
 
 set backspace=indent,eol,start
+
+" highlight search
+set hlsearch
+
+" Maximum amount of memory (in Kbyte) to use for pattern matching.
+set mmp=5000
