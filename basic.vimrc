@@ -32,3 +32,6 @@ set backspace=indent,eol,start
 
 " highlight search
 set hlsearch
+
+" Maximum amount of memory (in Kbyte) to use for pattern matching.
+set mmp=5000
