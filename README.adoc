@@ -1,0 +1,75 @@
+== vimrc
+
+[source,console]
+----
+$ tree -L 2 .vim
+.vim
+├── bundle
+│   ├── nerdtree
+│   ├── vim-fugitive
+│   ├── Vim-go
+│   ├── vundle.vim
+│   ├── Vundle.vim
+│   └── YouCompleteMe
+└── ftplugin
+    ├── css.vim -> tapstop.2.vim
+    ├── html.vim -> tapstop.2.vim
+    ├── javascript.vim -> tapstop.2.vim
+    ├── json.vim -> tapstop.2.vim
+    ├── scss.vim -> tapstop.2.vim
+    ├── tapstop.2.vim
+    └── yaml.vim -> tapstop.2.vim
+
+8 directories, 8 files
+----
+
+=== Usage
+
+. To set up configuration of Vim before, please backup you currenty `.vimrc` file in your home, then copy and paste the `.vimrc` in the root of the repository to you home.
+
+. To custom the file type indentation, or others, please copy the `.vim/ftplugin` to the vim runtime path (e.g. `~/.vim`).
+
+. If you want to apply Vundle.vim, please copy and paste the `.vim/bundle/vundle.vim` file to the vim runtime path (e.e.g `~/.vim/bundle/vundle.vim`).
++
+NOTE: You may need to check and update plugin list in the `.vim/bundle/vundle.vim`.
+
+=== Setup [Vundle](http://github.com/VundleVim/Vundle.vim)
+
+[source,console]
+----
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+----
+
+=== Install Plugins:
+
+Launch `vim` and run `:PluginInstall`
+
+To install from command line: `vim +PluginInstall +qall`
+
+[appendix]
+====
+
+There is a recommended layout for organizing your Vim runtime path (usually `~/.vim/`), following a structure that makes it easy to manage your configuration files, plugins, colorschemes, and other customizations. Here's a suggested layout:
+
+. `autoload/`: This directory contains autoloaded Vimscript files. Functions in these files are loaded on-demand when they are first called, improving startup time. Popular plugin managers like Pathogen and Vundle use this directory to store their autoload scripts.
+
+. `bundle/`: This directory is used by plugin managers like Vundle and Pathogen to store and manage individual plugins. Each plugin has its own subdirectory under bundle/.
+
+. `colors/`: This directory contains colorscheme files. Place custom colorscheme .vim files here, and they will be available for use with the colorscheme command.
+
+. `ftdetect/`: This directory contains file type detection scripts. Each script is responsible for detecting a specific file type based on file name patterns, contents, or other heuristics.
+
+. `ftplugin/`: This directory contains file type-specific plugin files. Each file in this directory should be named <filetype>.vim (e.g., javascript.vim, python.vim) and contain settings, mappings, or commands specific to that file type.
+
+. `indent/`: This directory contains file type-specific indenting files, which define how Vim should handle indentation for different file types. Similar to ftplugin/, each file should be named <filetype>.vim.
+
+. `plugin/`: This directory contains global plugin files. Plugins in this directory are loaded for all file types and are not file type-specific.
+
+. `syntax/`: This directory contains syntax highlighting files for different file types. Each file should be named <filetype>.vim.
+
+. `after/`: This directory is used for custom settings or overrides that should be loaded after the default settings. It has the same subdirectories as the main .vim directory (ftplugin, indent, syntax, etc.). Files in the after/ directory are loaded after the corresponding files in the main .vim directory, allowing you to customize or override default settings.
+
+. `.vimrc`: This is the main Vim configuration file, located in your home directory. It contains global settings, key mappings, and plugin configurations.
+
+By following this layout, you can keep your Vim runtime path organized and maintainable. Note that not all these directories may be needed for every user, and you can create them as needed. If you use a plugin manager like Vundle or Pathogen, some directories (like bundle/ and autoload/) will be managed automatically by the plugin manager.
+
