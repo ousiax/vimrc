@@ -43,3 +43,9 @@ set hlsearch
 
 " Maximum amount of memory (in Kbyte) to use for pattern matching.
 set mmp=10000
+
+" disable beep and flash with an autocmd
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
