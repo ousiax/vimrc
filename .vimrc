@@ -18,6 +18,10 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 " Enable file type detection and related features,
 " file type-specific plugins,
 " and file type-specific indentation
